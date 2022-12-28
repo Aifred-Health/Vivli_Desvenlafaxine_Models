@@ -1,0 +1,17 @@
+drug_dense_net_config = {
+    'dense_units': [len(list(df_train.drop('remsn_transformed', axis=1)))],
+    'dropout':[0.5]
+}
+drug_model = DenseNet(
+    name='test',
+    activation = torch.nn.SELU(),
+    input_networks = None,
+    in_dim = (len(list(df_train.drop('remsn_transformed', axis=1)))),
+    config = drug_dense_net_config,
+    optim_spec={'name':'SGD', 'lr':0.0000001},
+    num_classes = 2
+)
+
+batch_size=64
+
+vars_to_test = ['remsn_transformed', 'anhedonia_general', 'psychomotor_retardation',  'sex_Female', 'Sadness', 'somatic_gastro_intestinal', 'rem_sev_score', 'sex_Male', 'sociodem2', 'race_Asian', 'race_Black', 'race_Hispanic or Latino', 'race_White', 'race_Other']
