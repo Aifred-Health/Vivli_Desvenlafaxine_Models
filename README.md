@@ -3,7 +3,25 @@ This is a model of depression treatment outcomes for a single drug, desvenlafaxi
 
 [remission, anhedonia_general, psychomotor_retardation,  sex_Female, Sadness, somatic_gastro_intestinal, deoression severity score, sex_Male, age, race_Asian, race_Black, race_Hispanic or Latino, race_White, race_Other]
 
-As can be seen, adding data from later in the treatment cycle did not improve outcome prediction, as opposed to what we hypothesized and what has been demonstrated in other work, but overall model performance is poor, suggesting the need for improved optimization with a neural network architecture and rigorous checks of data quality. The latter may be provided by Bayesian optimization techniques, which we have used in previous work and which has yielded improved results. Imputation techniques would also make more data available; they were not used here purely because of the focus on adding in post-baseline variables and focusing on their impact. This will be trialed in future analyses using multiple drugs. The overall poor results here essentially demonstrate that to leverage a neural network properly in these kinds datasets, we cannot rely on single data points but must properly optimize the model over the entire dataset. This is intended as a teaching point for further work; the results themselves are not intended to have clinical meaning.
+As can be seen, adding data from later in the treatment cycle did not improve outcome prediction, as opposed to what we hypothesized and what has been demonstrated in other work, but overall model performance is poor, suggesting the need for improved optimization with a neural network architecture and rigorous checks of data quality. The former may be provided by Bayesian optimization techniques, which we have used in previous work and which has yielded improved results. Imputation techniques would also make more data available; they were not used here purely because of the focus on adding in post-baseline variables and focusing on their impact. This will be trialed in future analyses using multiple drugs. The overall poor results here essentially demonstrate that to leverage a neural network properly in these kinds datasets, we cannot rely on single data points but must properly optimize the model over the entire dataset. This is intended as a teaching point for further work; the results themselves are not intended to have clinical meaning.
+
+# Model Results
+1. Baseline Model
+    - Accuracy: 0.6436
+    - AUC: 0.5304
+    - F1-Score: 0.2439
+    - NPV: 0.7320
+    - PPV: 0.2884
+    - Sensitivity: 0.2112
+    - Specificity: 0.805
+2. Trajectory Model
+    - Accuracy: 0.209
+    - AUC: 0.3338
+    - F1-Score: 0.346
+    - NPV: 0.0
+    - PPV: 0.2195
+    - Sensitivity: 0.8181
+    - Specificity: 0.0
 
 # File Descriptions
 
